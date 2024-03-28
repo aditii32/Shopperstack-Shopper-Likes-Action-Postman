@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "35ea69e4-da14-4b75-a8f1-6c2c7f3743b4",
+		"name": "Shopper Likes Action",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33643733",
+		"_collection_link": "https://www.postman.com/spacecraft-specialist-7984735/workspace/shopperstack/collection/33643733-35ea69e4-da14-4b75-a8f1-6c2c7f3743b4?action=share&source=collection_link&creator=33643733"
+	},
+	"item": [
+		{
+			"name": "Returns all the likes of shopper",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseUrl}}/shoppers/likes?shopperId=55906",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"shoppers",
+						"likes"
+					],
+					"query": [
+						{
+							"key": "shopperId",
+							"value": "55906"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update the shoppers like list",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JWTtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Electronics\": [\r\n    \"Mobiles\"\r\n  ],\r\n  \"Men\": [\r\n    \"Tshirt\"\r\n  ],\r\n  \"additionalProp3\": [\r\n    \"string\"\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseUrl}}/shoppers/likes?shopperId=55906",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"shoppers",
+						"likes"
+					],
+					"query": [
+						{
+							"key": "shopperId",
+							"value": "55906"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete the shoppers like list",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JWTtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BaseUrl}}/shoppers/likes?category=Men&shopperId=55906",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"shoppers",
+						"likes"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "Men"
+						},
+						{
+							"key": "shopperId",
+							"value": "55906"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
